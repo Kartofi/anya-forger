@@ -19,7 +19,7 @@ for (track of player.getQueue(interaction.guild.id).tracks) {
     text += track.title + "\n"
 }
 embed.setDescription(text)
-interaction.reply({ embeds: [embed]})
+await interaction.reply({ embeds: [embed]})
 
 }
 }

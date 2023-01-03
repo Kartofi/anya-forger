@@ -10,7 +10,7 @@ module.exports = {
 ,
 async run (interaction) {
     if (!player.getQueue(interaction.guild.id)) return interaction.reply({ content: "There is no queue in this server."});
-    interaction.reply({embeds: [new MessageEmbed().setTitle("Skipped!").setColor("GREEN")]})
+    await interaction.reply({embeds: [new MessageEmbed().setTitle("Skipped!").setColor("GREEN")]})
 
     player.getQueue(interaction.guild.id).skip();
 

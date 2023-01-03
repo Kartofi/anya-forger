@@ -82,6 +82,13 @@ const rest = new REST({ version: "9" }).setToken(data.token);
 
 client.once("ready", () => {
     console.log("I'm ready !");
+    setInterval(() => {
+        let totalSeconds = Math.floor(client.uptime / 1000);
+
+let uptime = `${totalSeconds} seconds`;
+        client.user.setActivity(`Awake for ` + uptime, { type: 'WATCHING' });
+    }, 10000);
+    
 });
 client.on('interactionCreate', (interaction) => {
    if (interaction.type == "MESSAGE_COMPONENT") {

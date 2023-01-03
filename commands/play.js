@@ -38,10 +38,10 @@ async run (interaction) {
         if (!queue.connection) await queue.connect(interaction.member.voice.channel);
     } catch {
         await player.deleteQueue(interaction.guild.id);
-        return interaction.channel.send(`I can't join the voice channel ${interaction.author}... try again ? ❌`);
+        return interaction.reply(`I can't join the voice channel ${interaction.author}... try again ? ❌`);
     }
 
-    await interaction.channel.send(`Loading your ${res.playlist ? 'playlist' : 'track'}... 🎧`);
+    await interaction.reply(`Loading your ${res.playlist ? 'playlist' : 'track'}... 🎧`);
 
     res.playlist ? queue.addTracks(res.tracks) : queue.addTrack(res.tracks[0]);
 

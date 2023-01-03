@@ -10,8 +10,8 @@ module.exports = {
 ,
 async run (interaction) {
     if (!player.getQueue(interaction.guild.id)) return interaction.reply({ content: "There is no queue in this server."});
-    interaction.reply({ content: "Stopped the music."})
-console.log(player.getQueue(interaction.guild.id).stop())
+    await interaction.reply({ content: "Stopped the music."})
+player.getQueue(interaction.guild.id).stop()
 
 
 }

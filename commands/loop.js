@@ -23,7 +23,7 @@ async run (interaction) {
     return interaction.reply({content: "Enter valid type"})
    }
     player.getQueue(interaction.guild.id).setRepeatMode(types.indexOf(name))
-    interaction.reply({embeds: [new MessageEmbed().setTitle("Loop set to " + name).setColor("GREEN")]})
+   await interaction.reply({embeds: [new MessageEmbed().setTitle("Loop set to " + name).setColor("GREEN")]})
 
 
 }
